@@ -1,24 +1,31 @@
-# Muhammad Ahmad – Professional Web Internship Viva Presentation
+# Muhammad Ahmad – Portfolio-Themed Internship Viva Presentation
 
-## What changed
-- Light professional theme, no dark overall design.
-- Removed Speaker Notes button and panel.
-- Removed Overview button/mode.
-- Removed separate LinkedIn/GitHub profile slide.
-- Kept LinkedIn and GitHub as quick links in the top bar and final slide.
-- Removed the workflow video from the middle slides.
-- Kept the signing-off video only on the final slide.
-- Added a Download PPT button linked to the included PPT file.
-- Built as a responsive, no-scroll slide experience for laptop and mobile screens.
+This is a professional web-based 3D animated internship viva presentation designed to match the cyber/data/AI visual style of the portfolio at `mahmadcs.me`.
 
-## How to run locally
-Open `index.html` directly, or use VS Code Live Server.
+## Files
+- `index.html` — presentation slides
+- `styles.css` — responsive 3D portfolio-matched theme
+- `app.js` — slide navigation, fullscreen, touch controls, 3D tilt and animated starfield
+- `assets/` — images, signing-off video, logos and downloadable PPT
+- `staticwebapp.config.json` — Azure Static Web Apps routing and MIME config
+- `web.config` — Azure App Service/IIS fallback
 
 ## Controls
-- Next: right arrow, down arrow, PageDown, space, or `›` button
-- Previous: left arrow, up arrow, PageUp, Backspace, or `‹` button
-- Fullscreen: top button or `F`
-- Mobile: swipe left/right
+- Arrow keys / Page Up / Page Down / Space — navigate
+- Swipe left/right on mobile — navigate
+- Full Screen button or `F` — fullscreen
+- Download PPT button — downloads the included PowerPoint version
 
-## Azure hosting
-Upload this folder to Azure Static Web Apps, Azure App Service, or Azure Storage Static Website hosting. Keep the `assets` folder with `index.html`, `styles.css`, and `app.js`.
+## Azure Update
+Replace the files in your GitHub repository with this folder's contents, then run:
+
+```powershell
+git add .
+git commit -m "Update internship presentation with portfolio theme"
+git push
+```
+
+Azure Static Web Apps will redeploy automatically from GitHub Actions.
+
+
+Update included: borderless slide stage, theme switcher (Cyber/Ocean/Bright/Sunset), floating code/webpage background elements, and responsive first-slide sizing. Press `T` to cycle themes.

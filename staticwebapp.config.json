@@ -1,7 +1,12 @@
 {
-  "navigationFallback": { "rewrite": "/index.html" },
+  "routes": [
+    { "route": "/*", "serve": "/index.html", "statusCode": 200 }
+  ],
   "mimeTypes": {
-    ".mp4": "video/mp4",
-    ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    ".mp4": "video/mp4"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html"
   }
 }

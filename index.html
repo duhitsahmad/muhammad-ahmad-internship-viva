@@ -3,1050 +3,337 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional responsive 3D animated internship viva web presentation for Muhammad Ahmad at Systems Limited." />
-  <title>Muhammad Ahmad | Internship Viva Presentation</title>
-  <link rel="preload" href="assets/systems_" as="image" />
+  <meta name="description" content="Modern 3D web-based internship viva presentation for Muhammad Ahmad at Systems Limited." />
+  <title>Muhammad Ahmad | Systems Limited Internship Viva</title>
+  <link rel="preload" href="assets/systems_logo.png" as="image" />
+  <link rel="preload" href="assets/open_office.jpg" as="image" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
+<body data-theme="cyber">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="aurora aurora-a"></div>
+  <div class="aurora aurora-b"></div>
+  <div class="grid-haze" aria-hidden="true"></div>
+  <div class="bg-floaters" aria-hidden="true">
+    <div class="code-float cf-1">&lt;section class="hero"&gt;</div>
+    <div class="code-float cf-2">display: grid;</div>
+    <div class="code-float cf-3">const slide = next()</div>
+    <div class="code-float cf-4">@media responsive</div>
+    <div class="web-float wf-1"><i></i><i></i><i></i><b></b><span></span><span></span><em></em></div>
+    <div class="web-float wf-2"><i></i><i></i><i></i><b></b><span></span><span></span><em></em></div>
+    <div class="web-float wf-3"><i></i><i></i><i></i><b></b><span></span><span></span><em></em></div>
+  </div>
 
-  <header class="topbar glass">
+  <header class="topbar">
     <a class="brand" href="#slide-1" aria-label="Go to title slide">
-      <img src="assets/systems_logo.png" alt="Systems Limited logo" />
-      <span>Internship Viva</span>
+      <span class="brand-mark">&gt;_</span>
+      <span class="brand-text"><strong>Muhammad <em>Ahmad</em></strong><small>Internship Viva · Systems Limited</small></span>
     </a>
-    <nav class="top-actions" aria-label="Presentation actions">
-      <a class="social mini-linkedin" href="https://www.linkedin.com/in/muhammad-ahmad-bscs" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a class="social mini-github" href="https://github.com/duhitsahmad" target="_blank" rel="noreferrer">GitHub</a>
-      <a class="download-btn" href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download>Download PPT</a>
-    <button id="overviewBtn" type="button" aria-label="Toggle overview">Overview</button>
-      <button id="fullscreenBtn" type="button" aria-label="Fullscreen">Full Screen</button>
+    <nav class="nav-actions" aria-label="Presentation links">
+      <a href="https://www.mahmadcs.me" target="_blank" rel="noreferrer">Portfolio</a>
+      <a href="https://www.linkedin.com/in/muhammad-ahmad-bscs" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://github.com/duhitsahmad" target="_blank" rel="noreferrer">GitHub</a>
+      <div class="theme-picker">
+        <button id="themeBtn" type="button" aria-haspopup="true" aria-expanded="false">Theme</button>
+        <div class="theme-menu" id="themeMenu" role="menu" aria-label="Color themes">
+          <button type="button" data-theme="cyber"><span class="swatch cyber"></span>Cyber</button>
+          <button type="button" data-theme="ocean"><span class="swatch ocean"></span>Ocean</button>
+          <button type="button" data-theme="bright"><span class="swatch bright"></span>Bright</button>
+          <button type="button" data-theme="sunset"><span class="swatch sunset"></span>Sunset</button>
+        </div>
+      </div>
+      <a class="download" href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download>Download PPT</a>
+      <button id="fullscreenBtn" type="button">Full Screen</button>
     </nav>
   </header>
 
-  <main id="deck" class="deck" aria-label="Muhammad Ahmad internship presentation">
-    <section class="slide hero" id="slide-1" data-title="Title" data-notes="Introduce yourself, internship organization, duration and front-end focus.">
-      <div class="hero-grid">
+  <aside class="rail" aria-label="Slide quick navigation">
+    <button data-goto="0" aria-label="Title">⌂</button>
+    <button data-goto="1" aria-label="Company">◆</button>
+    <button data-goto="4" aria-label="Stack">▣</button>
+    <button data-goto="7" aria-label="Project">⌘</button>
+    <button data-goto="14" aria-label="End">➜</button>
+  </aside>
+
+  <main class="deck" id="deck" aria-live="polite">
+    <section class="slide active hero" id="slide-1" data-title="Title">
+      <div class="slide-shell hero-shell">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Final Internship Viva Presentation</p>
-          <h1>Front-End Development Internship</h1>
-          <p class="lead">Systems Limited · KSA Digital Consulting</p>
-          <div class="student-card glass tilt-card">
-            <div><span>Presented by</span><strong>Muhammad Ahmad</strong></div>
-            <div><span>Registration No.</span><strong>2023-BS-CS-295</strong></div>
-            <div><span>Program</span><strong>BS Computer Science</strong></div>
+          <p class="terminal-label"><span></span> presentation mode</p>
+          <h1>Systems Limited <br><em>Internship Viva</em></h1>
+          <p class="lead">Front-End Development Internship · KSA Digital Consulting</p>
+          <div class="identity-strip">
+            <div><small>Presented by</small><strong>Muhammad Ahmad</strong></div>
+            <div><small>Registration No.</small><strong>2023-BS-CS-295</strong></div>
+            <div><small>Program</small><strong>BS Computer Science</strong></div>
           </div>
-          <div class="hero-actions">
-            <a href="#slide-2" class="primary-action">Start Presentation</a>
-            <a href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download class="secondary-action">Download PPT Version</a>
+          <div class="hero-buttons">
+            <button class="primary" data-next>Start Presentation</button>
+            <a class="ghost" href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download>Download PPT Version</a>
           </div>
         </div>
-        <div class="hero-visual reveal delay-1">
-          <div class="device-3d laptop-frame floaty">
-            <div><img src="assets/systems_building_night.jpg" alt="Systems Limited office workspace" /></div>
-            <div class="floating-badge html-badge">HTML</div>
-            <div class="floating-badge css-badge">CSS</div>
-            <div class="floating-badge js-badge">JS</div>
+        <div class="profile-stage reveal delay-1">
+          <div class="holo-card tilt-card">
+            <img src="assets/open_office.jpg" alt="Systems Limited office environment" />
+            <div class="holo-caption"><strong>M. Ahmad</strong><span>HTML / CSS / JavaScript</span></div>
+            <b class="tag top">Front-End</b><b class="tag right">Responsive</b><b class="tag bottom">Systems</b>
           </div>
+          <div class="wire-orbit orbit-one"></div>
+          <div class="wire-orbit orbit-two"></div>
         </div>
       </div>
     </section>
 
-    <section class="slide" id="slide-2" data-title="About Systems Limited" data-notes="Briefly describe the company in 5 to 6 lines.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Host Organization</p>
+    <section class="slide" id="slide-2" data-title="About Systems Limited">
+      <div class="slide-shell two-col">
+        <div class="copy reveal">
+          <p class="terminal-label"><span></span> host organization</p>
           <h2>About Systems Limited</h2>
-          <p class="large-text">Systems Limited is a leading Pakistani global technology company with a long history in digital transformation and enterprise technology services.</p>
-          <ul class="clean-list">
-            <li>Founded in 1977 and recognized as one of Pakistan’s pioneering IT companies.</li>
-            <li>Provides digital strategy, business applications, cloud, data & analytics, AI, digital commerce and business process services.</li>
-            <li>Serves clients across international markets through onsite and offshore delivery models.</li>
-            <li>Works with industry verticals such as banking, retail, public sector, communications and health.</li>
-            <li>The internship was connected with the KSA Digital Consulting team, giving exposure to professional methods and tools.</li>
+          <p class="big-copy">Systems Limited is a Pakistani global technology company known for digital transformation and enterprise technology services.</p>
+          <ul class="check-list compact">
+            <li>Founded in 1977 as one of Pakistan’s pioneering IT companies.</li>
+            <li>Provides digital consulting, cloud, data, AI, commerce and business application services.</li>
+            <li>Works with clients across local and international markets.</li>
+            <li>Supports sectors like banking, retail, public sector, communication and healthcare.</li>
+            <li>My internship was linked with the KSA Digital Consulting environment.</li>
           </ul>
         </div>
-        <div class="stacked-photos reveal delay-1">
-          <img src="assets/systems_building_night.jpg" alt="Systems Limited building at night" />
-          <img src="assets/systems_flag_building.jpg" alt="Systems Limited building decorated for Pakistan" />
-          <div class="metric-card glass"><strong>Digital Consulting</strong><span>Professional workflow, tools and teamwork</span></div>
+        <div class="photo-stack reveal delay-1">
+          <img class="photo-a tilt-card" src="assets/systems_building_night.jpg" alt="Systems Limited building" />
+          <img class="photo-b tilt-card" src="assets/systems_flag_building.jpg" alt="Systems Limited building with Pakistan flag" />
+          <div class="glass-chip"><strong>Digital Consulting</strong><small>professional workflow · tools · teamwork</small></div>
         </div>
       </div>
     </section>
 
-    <section class="slide" id="slide-3" data-title="Internship Snapshot" data-notes="Explain the duration, supervisor and exact front-end scope.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Internship Snapshot</p>
-        <h2>Profile, Duration & Scope</h2>
-      </div>
-      <div class="snapshot-grid reveal delay-1">
-        <article class="info-tile tilt-card"><span>Student</span><strong>Muhammad Ahmad</strong><small>BS Computer Science</small></article>
-        <article class="info-tile tilt-card"><span>Registration</span><strong>2023-BS-CS-295</strong><small>The University of Faisalabad</small></article>
-        <article class="info-tile tilt-card"><span>Duration</span><strong>21 Jul – 13 Aug 2025</strong><small>Systems Limited</small></article>
-        <article class="info-tile tilt-card"><span>Focus</span><strong>Front-End Development</strong><small>Mostly HTML & CSS, basic JavaScript</small></article>
-      </div>
-      <div class="document-preview reveal delay-2">
-        <img src="assets/front_page.jpg" alt="Internship report title page" />
-        <img src="assets/offer_letter.jpg" alt="Systems Limited internship offer letter" />
-        <img src="assets/completion_certificate.jpg" alt="Systems Limited internship completion certificate" />
-      </div>
-    </section>
-
-    <section class="slide media-focus" id="slide-4" data-title="Workplace Environment" data-notes="Show the real office environment and learning setup.">
-      <div class="copy-block reveal">
-        <p class="eyebrow">Workplace Environment</p>
-        <h2>Learning in a Professional Office</h2>
-        <p>The internship environment supported focused technical practice, professional discipline, and regular exposure to office communication. My work mainly involved learning front-end structure, styling and responsive design through guided tasks and self-practice.</p>
-      </div>
-      <div class="media-grid reveal delay-1">
-        <figure class="polaroid big"><img src="assets/office_boardroom.jpg" alt="Systems office boardroom" /><figcaption>Professional office setting</figcaption></figure>
-        <figure class="polaroid"><img src="assets/systems_html_learning.jpg" alt="HTML learning setup at Systems" /><figcaption>HTML practice</figcaption></figure>
-        <figure class="polaroid"><img src="assets/workstation_communication.jpg" alt="Laptop workstation communication" /><figcaption>Team communication</figcaption></figure>
+    <section class="slide" id="slide-3" data-title="Internship Snapshot">
+      <div class="slide-shell">
+        <div class="section-head reveal">
+          <p class="terminal-label"><span></span> internship snapshot</p>
+          <h2>Duration, Scope & Role</h2>
+        </div>
+        <div class="snapshot-cards reveal delay-1">
+          <article class="glass-card tilt-card"><small>Student</small><strong>Muhammad Ahmad</strong><span>BS Computer Science</span></article>
+          <article class="glass-card tilt-card"><small>Host</small><strong>Systems Limited</strong><span>KSA Digital Consulting</span></article>
+          <article class="glass-card tilt-card"><small>Duration</small><strong>21 Jul – 13 Aug 2025</strong><span>Front-End learning period</span></article>
+          <article class="glass-card tilt-card"><small>Focus</small><strong>HTML + CSS</strong><span>with basic JavaScript</span></article>
+        </div>
+        <div class="mini-docs reveal delay-2">
+          <img src="assets/front_page.jpg" alt="Report front page" />
+          <img src="assets/offer_letter.jpg" alt="Offer letter" />
+          <img src="assets/completion_certificate.jpg" alt="Completion certificate" />
+        </div>
       </div>
     </section>
 
-    <section class="slide" id="slide-5" data-title="Technology Stack" data-notes="Explain that scope was mostly HTML and CSS, then basic JavaScript.">
-      <div class="split-layout reverse">
-        <div class="code-cube reveal">
+    <section class="slide" id="slide-4" data-title="Professional Environment">
+      <div class="slide-shell media-layout">
+        <div class="copy reveal">
+          <p class="terminal-label"><span></span> office experience</p>
+          <h2>Learning Inside a Professional Tech Space</h2>
+          <p class="big-copy">The workplace helped me observe communication, discipline and real digital workflows while practicing front-end tasks in a professional environment.</p>
+        </div>
+        <div class="image-collage reveal delay-1">
+          <figure class="wide tilt-card"><img src="assets/office_boardroom.jpg" alt="Office boardroom" /><figcaption>Office setting</figcaption></figure>
+          <figure class="tall tilt-card"><img src="assets/systems_html_learning.jpg" alt="HTML learning setup" /><figcaption>HTML practice</figcaption></figure>
+          <figure class="small tilt-card"><img src="assets/workstation_communication.jpg" alt="Workstation communication" /><figcaption>Communication</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-5" data-title="Technology Stack">
+      <div class="slide-shell two-col stack-slide">
+        <div class="cube-area reveal">
           <div class="cube-scene" aria-hidden="true">
             <div class="cube">
-              <div class="face face-front">HTML</div>
-              <div class="face face-back">CSS</div>
-              <div class="face face-right">JS</div>
-              <div class="face face-left">UX</div>
-              <div class="face face-top">WEB</div>
-              <div class="face face-bottom">UI</div>
+              <div class="face f1">HTML</div><div class="face f2">CSS</div><div class="face f3">JS</div>
+              <div class="face f4">UI</div><div class="face f5">UX</div><div class="face f6">WEB</div>
             </div>
           </div>
         </div>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Technical Scope</p>
-          <h2>Front-End Skills Practiced</h2>
-          <div class="skill-bars">
-            <div><span>HTML structure</span><b style="--w:92%"></b></div>
-            <div><span>CSS layout & design</span><b style="--w:88%"></b></div>
-            <div><span>Responsive design</span><b style="--w:76%"></b></div>
-            <div><span>Basic JavaScript</span><b style="--w:42%"></b></div>
-          </div>
-          <p class="note">No backend, database or advanced framework work was included. The goal was to strengthen the front-end foundation first.</p>
+        <div class="copy reveal delay-1">
+          <p class="terminal-label"><span></span> tech stack</p>
+          <h2>My Front-End Foundation</h2>
+          <div class="stack-meter"><span>HTML structure</span><b style="--p:92%"></b></div>
+          <div class="stack-meter"><span>CSS design & layouts</span><b style="--p:88%"></b></div>
+          <div class="stack-meter"><span>Responsive design</span><b style="--p:78%"></b></div>
+          <div class="stack-meter muted"><span>Basic JavaScript</span><b style="--p:42%"></b></div>
+          <p class="note">The internship scope stayed front-end only: no backend, database or advanced frameworks.</p>
         </div>
       </div>
     </section>
 
-    <section class="slide" id="slide-6" data-title="Workflow" data-notes="Explain your practical workflow from requirement to testing.">
-      <div class="title-row reveal">
-        <p class="eyebrow">My Front-End Workflow</p>
-        <h2>From Requirement to Responsive Page</h2>
+    <section class="slide" id="slide-6" data-title="Workflow">
+      <div class="slide-shell">
+        <div class="section-head reveal">
+          <p class="terminal-label"><span></span> front-end workflow</p>
+          <h2>From Requirement to Responsive Page</h2>
+        </div>
+        <div class="process-line reveal delay-1">
+          <article><span>01</span><strong>Understand</strong><p>Identify content, sections and purpose.</p></article>
+          <article><span>02</span><strong>Structure</strong><p>Build semantic HTML first.</p></article>
+          <article><span>03</span><strong>Style</strong><p>Apply CSS layout, spacing and theme.</p></article>
+          <article><span>04</span><strong>Adapt</strong><p>Make it responsive for devices.</p></article>
+          <article><span>05</span><strong>Test</strong><p>Debug and polish final output.</p></article>
+        </div>
       </div>
-      <div class="timeline-3d reveal delay-1">
-        <article><span>01</span><strong>Understand</strong><p>Read requirement and identify page sections.</p></article>
-        <article><span>02</span><strong>Structure</strong><p>Create semantic HTML and organize content.</p></article>
-        <article><span>03</span><strong>Style</strong><p>Apply CSS spacing, colors, layout and consistency.</p></article>
-        <article><span>04</span><strong>Adapt</strong><p>Make the layout responsive for mobile and laptop screens.</p></article>
-        <article><span>05</span><strong>Test</strong><p>Review output, debug issues and refine final presentation.</p></article>
-      </div>
-      
     </section>
 
-    <section class="slide" id="slide-7" data-title="HTML" data-notes="Explain HTML learning with examples.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Core Learning 01</p>
-          <h2>HTML: Building the Structure</h2>
-          <ul class="clean-list large-list">
-            <li>Created complete page skeletons using head, body, header, section and footer.</li>
-            <li>Practiced headings, paragraphs, links, images, lists, tables and forms.</li>
-            <li>Learned clean file paths for CSS, JavaScript and images.</li>
-            <li>Improved semantic structure so pages were easier to style and maintain.</li>
+    <section class="slide" id="slide-7" data-title="HTML & CSS">
+      <div class="slide-shell two-col">
+        <div class="copy reveal">
+          <p class="terminal-label"><span></span> core learning</p>
+          <h2>HTML & CSS Practice</h2>
+          <ul class="check-list">
+            <li>Created page skeletons with header, section, main and footer areas.</li>
+            <li>Practiced links, images, lists, tables and form fields.</li>
+            <li>Used CSS selectors, colors, typography, margins, padding and borders.</li>
+            <li>Built layouts through Flexbox, Grid and media queries.</li>
           </ul>
         </div>
-        <div class="browser-card reveal delay-1 tilt-card">
-          <div class="browser-dots"><span></span><span></span><span></span></div>
-          <pre><code>&lt;header&gt;
-  &lt;nav&gt;Home · About · Contact&lt;/nav&gt;
-&lt;/header&gt;
-&lt;main&gt;
-  &lt;section class="hero"&gt;
-    &lt;h1&gt;Front-End Project&lt;/h1&gt;
-  &lt;/section&gt;
-&lt;/main&gt;</code></pre>
+        <div class="code-window reveal delay-1 tilt-card">
+          <div class="window-bar"><i></i><i></i><i></i><span>index.html</span></div>
+          <pre><code>&lt;section class="hero"&gt;
+  &lt;h1&gt;Front-End Project&lt;/h1&gt;
+  &lt;p&gt;HTML + CSS + JS&lt;/p&gt;
+&lt;/section&gt;
+
+.hero {
+  display: grid;
+  gap: 1rem;
+  padding: 4rem;
+}</code></pre>
         </div>
       </div>
     </section>
 
-    <section class="slide" id="slide-8" data-title="CSS Responsive" data-notes="Describe CSS, layouts and responsive design.">
-      <div class="split-layout reverse">
-        <div class="photo-device reveal"><img src="assets/responsive_devices.jpg" alt="Responsive website devices" /></div>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Core Learning 02</p>
-          <h2>CSS: Design, Layout & Responsiveness</h2>
-          <ul class="clean-list large-list">
-            <li>Used selectors, colors, fonts, spacing, borders and backgrounds.</li>
-            <li>Practiced box model, margin, padding and element sizing.</li>
-            <li>Used Flexbox and Grid for layout alignment and structure.</li>
-            <li>Applied media queries to make pages mobile-friendly.</li>
-          </ul>
+    <section class="slide" id="slide-8" data-title="Responsive Design">
+      <div class="slide-shell two-col reverse">
+        <div class="device-wall reveal tilt-card">
+          <img src="assets/responsive_devices.jpg" alt="Responsive website shown on laptop tablet and mobile" />
+        </div>
+        <div class="copy reveal delay-1">
+          <p class="terminal-label"><span></span> responsive design</p>
+          <h2>Designing for Every Screen</h2>
+          <p class="big-copy">I learned that a page must remain readable, balanced and functional on laptop, tablet and mobile screens.</p>
+          <div class="pill-grid"><span>Fluid layout</span><span>Media queries</span><span>Readable spacing</span><span>Mobile navigation</span></div>
         </div>
       </div>
     </section>
 
-    <section class="slide" id="slide-9" data-title="JavaScript" data-notes="Describe JavaScript only as basic-level interaction.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Core Learning 03</p>
-        <h2>Basic JavaScript Interaction</h2>
+    <section class="slide" id="slide-9" data-title="JavaScript Basics">
+      <div class="slide-shell">
+        <div class="section-head reveal">
+          <p class="terminal-label"><span></span> basic javascript</p>
+          <h2>Small Interactions, Clear Logic</h2>
+        </div>
+        <div class="js-panels reveal delay-1">
+          <article class="tilt-card"><small>DOM</small><strong>querySelector()</strong><p>Select HTML elements.</p></article>
+          <article class="tilt-card"><small>Events</small><strong>click / input</strong><p>Respond to user actions.</p></article>
+          <article class="tilt-card"><small>Logic</small><strong>if / else</strong><p>Handle simple checks.</p></article>
+          <article class="tilt-card"><small>Functions</small><strong>Reusable code</strong><p>Organize small actions.</p></article>
+        </div>
+        <p class="center-note reveal delay-2">JavaScript was covered only at basic level because the internship mainly focused on HTML and CSS.</p>
       </div>
-      <div class="js-grid reveal delay-1">
-        <article class="tilt-card"><span>DOM Selection</span><strong>querySelector()</strong><p>Connected JavaScript with HTML elements.</p></article>
-        <article class="tilt-card"><span>Events</span><strong>click / input</strong><p>Triggered simple actions from user interaction.</p></article>
-        <article class="tilt-card"><span>Logic</span><strong>if / else</strong><p>Handled simple decisions and form checks.</p></article>
-        <article class="tilt-card"><span>Functions</span><strong>Reusable code</strong><p>Organized small tasks into clear functions.</p></article>
-      </div>
-      <p class="center-note reveal delay-2">JavaScript was intentionally kept at basic level because the main internship focus was HTML and CSS.</p>
     </section>
 
-    <section class="slide" id="slide-10" data-title="Project Work" data-notes="Discuss GitHub Profile Viewer and front-end mini project practice.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Practice Project</p>
+    <section class="slide" id="slide-10" data-title="Project Work">
+      <div class="slide-shell two-col">
+        <div class="copy reveal">
+          <p class="terminal-label"><span></span> practice project</p>
           <h2>Mini Front-End Project Work</h2>
-          <p>I practiced creating a small front-end interface using HTML, CSS and JavaScript. The screen shown here represents project-style learning, where structure, styling and small JavaScript behavior were combined in one working page.</p>
-          <div class="highlight-box">Example: GitHub Profile Viewer style interface with input field, profile button and dynamic profile details.</div>
+          <p class="big-copy">I practiced a GitHub Profile Viewer style interface where structure, visual styling and basic JavaScript behavior worked together.</p>
+          <div class="terminal-card">
+            <p>$ build interface</p><p>$ connect input + button</p><p>$ show profile details</p><p>$ test responsiveness</p>
+          </div>
         </div>
-        <figure class="project-photo reveal delay-1 tilt-card"><img src="assets/vscode_project.jpg" alt="VS Code front-end project work" /><figcaption>VS Code project practice at Systems Limited</figcaption></figure>
+        <figure class="project-display reveal delay-1 tilt-card">
+          <img src="assets/vscode_project.jpg" alt="VS Code front-end project work" />
+          <figcaption>VS Code practice at Systems Limited</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="slide" id="slide-11" data-title="Systems Exposure" data-notes="Show exposure to workplace systems and digital attendance.">
-      <div class="split-layout reverse">
-        <figure class="project-photo reveal"><img src="assets/attendance.jpg" alt="SYSAMS attendance interface" /><figcaption>SYSAMS digital attendance interface</figcaption></figure>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Digital Workplace Exposure</p>
-          <h2>Understanding Internal Systems</h2>
-          <p>The internship also gave exposure to how a professional technology company uses internal systems, attendance tools and digital communication. This helped me understand how software supports real organizational processes.</p>
-          <ul class="clean-list">
-            <li>Observed structured check-in and check-out workflows.</li>
-            <li>Understood the role of digital tools in office discipline.</li>
-            <li>Connected front-end interface design with real user needs.</li>
+    <section class="slide" id="slide-11" data-title="Digital Workplace">
+      <div class="slide-shell two-col reverse">
+        <figure class="project-display reveal tilt-card"><img src="assets/attendance.jpg" alt="SYSAMS attendance interface" /><figcaption>SYSAMS digital attendance interface</figcaption></figure>
+        <div class="copy reveal delay-1">
+          <p class="terminal-label"><span></span> digital workplace exposure</p>
+          <h2>Understanding Real Systems</h2>
+          <ul class="check-list">
+            <li>Observed digital check-in and check-out workflows.</li>
+            <li>Understood how software supports office discipline.</li>
+            <li>Connected interface design with real user needs.</li>
+            <li>Experienced communication through workplace tools.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="slide" id="slide-12" data-title="Culture" data-notes="Discuss workplace culture and communication.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Professional Culture</p>
-        <h2>Communication, Events & Team Environment</h2>
-      </div>
-      <div class="culture-grid reveal delay-1">
-        <figure><img src="assets/independence_event.jpg" alt="Pakistan Independence Day event email" /><figcaption>Internal communication & events</figcaption></figure>
-        <figure><img src="assets/open_office.jpg" alt="Open office at Systems Limited" /><figcaption>Professional open office environment</figcaption></figure>
-      </div>
-      <p class="center-note reveal delay-2">The office environment showed how technical learning, professional communication and organizational culture work together.</p>
-    </section>
-
-    <section class="slide" id="slide-13" data-title="Challenges" data-notes="Explain problems faced and solutions.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Challenges & Solutions</p>
-          <h2>What I Improved During Internship</h2>
-          <div class="challenge-list">
-            <article><strong>Responsive Issues</strong><span>Solved through media queries and flexible layouts.</span></article>
-            <article><strong>CSS Alignment</strong><span>Improved spacing using box model, Flexbox and Grid.</span></article>
-            <article><strong>Broken Links/Paths</strong><span>Checked file names, folders and stylesheet linking.</span></article>
-            <article><strong>JavaScript Basics</strong><span>Practiced DOM selection, events and small functions.</span></article>
-          </div>
+    <section class="slide" id="slide-12" data-title="Culture">
+      <div class="slide-shell media-layout">
+        <div class="copy reveal">
+          <p class="terminal-label"><span></span> culture & communication</p>
+          <h2>Professional Culture</h2>
+          <p class="big-copy">The internship environment showed that technical learning, team communication and organizational culture are connected parts of professional development.</p>
         </div>
-        <div class="photo-device reveal delay-1"><img src="assets/debugging_workspace.jpg" alt="Debugging workspace illustration" /></div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-14" data-title="Learning Outcomes" data-notes="Summarize key learning outcomes.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Learning Outcomes</p>
-        <h2>Skills Gained from the Internship</h2>
-      </div>
-      <div class="outcome-orbit reveal delay-1">
-        <div class="center-orb">Front-End<br/>Foundation</div>
-        <article>Semantic HTML</article>
-        <article>CSS Layout</article>
-        <article>Responsive Design</article>
-        <article>Basic JavaScript</article>
-        <article>Debugging</article>
-        <article>Communication</article>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-15" data-title="Professional Links" data-notes="Open LinkedIn and GitHub profiles from the presentation.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Professional Presence</p>
-        <h2 style="color:steelblue;">LinkedIn</h2> <h2>& GitHub</h2>
-      </div>
-      <div class="profile-grid reveal delay-1">
-        <article class="linkedin-panel tilt-card">
-          <div class="mock-toolbar"><span></span><span></span><span></span><em>linkedin.com/in/muhammad-ahmad-bscs</em></div>
-          <div class="li-head"></div>
-          <div class="li-profile">
-            <div class="avatar">MA</div>
-            <div><h3>Muhammad Ahmad</h3><p>BS Computer Science · Front-End Intern</p><small>Systems Limited | HTML · CSS · JavaScript</small></div>
-          </div>
-          <a href="https://www.linkedin.com/in/muhammad-ahmad-bscs" target="_blank" rel="noreferrer" class="profile-btn">Open LinkedIn Profile</a>
-        </article>
-        <article class="github-panel tilt-card">
-          <div class="mock-toolbar"><span></span><span></span><span></span><em>github.com/duhitsahmad</em></div>
-          <h3>GitHub</h3>
-          <p>Project practice: responsive pages, JavaScript exercises and GitHub Profile Viewer style UI.</p>
-          <div class="repo-lines"><i></i><i></i><i></i></div>
-          <a href="https://github.com/duhitsahmad" target="_blank" rel="noreferrer" class="profile-btn dark">Open GitHub Account</a>
-        </article>
-      </div>
-      <p class="center-note reveal delay-2">LinkedIn and GitHub open directly in a new tab from this slide.</p>
-    </section>
-
-    <section class="slide" id="slide-16" data-title="Download" data-notes="Show the downloadable PPT version and source documents.">
-      <div class="download-stage reveal">
-        <div class="download-card tilt-card">
-          <p class="eyebrow">Download Feature</p>
-          <h2>Presentation Backup Available</h2>
-          <p>This web presentation includes a PPT version that can be downloaded and submitted or used offline during viva if required.</p>
-          <a href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download class="big-download">Download Same PPT Version</a>
-        </div>
-        <div class="doc-fan" aria-label="Document previews">
-          <img src="assets/offer_letter.jpg" alt="Offer letter" />
-          <img src="assets/completion_certificate.jpg" alt="Completion certificate" />
-          <img src="assets/front_page.jpg" alt="Report front page" />
+        <div class="culture-panel reveal delay-1">
+          <img src="assets/independence_event.jpg" alt="Independence Day communication" />
+          <img src="assets/open_office.jpg" alt="Open office environment" />
         </div>
       </div>
     </section>
 
-    <section class="slide final-slide" id="slide-17" data-title="Signing Off" data-notes="End confidently, thank committee and invite questions.">
-      <h1 style="color:rgb(131, 24, 130);">Signing Off</h1>
-      <div class="final-layout">
-        <div class="copy-block reveal">
-          
+    <section class="slide" id="slide-13" data-title="Challenges">
+      <div class="slide-shell">
+        <div class="section-head reveal">
+          <p class="terminal-label"><span></span> challenges & solutions</p>
+          <h2>What I Improved</h2>
+        </div>
+        <div class="challenge-grid reveal delay-1">
+          <article><strong>Responsive issues</strong><span>Fixed with media queries and flexible widths.</span></article>
+          <article><strong>CSS alignment</strong><span>Improved using box model, Flexbox and Grid.</span></article>
+          <article><strong>Broken paths</strong><span>Checked folders, file names and links.</span></article>
+          <article><strong>JS basics</strong><span>Practiced DOM events and simple functions.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-14" data-title="Learning Outcomes">
+      <div class="slide-shell">
+        <div class="section-head reveal">
+          <p class="terminal-label"><span></span> final outcomes</p>
+          <h2>Skills Gained</h2>
+        </div>
+        <div class="orbit-system reveal delay-1">
+          <div class="core">Front-End<br>Foundation</div>
+          <span>Semantic HTML</span><span>CSS Layout</span><span>Responsive UI</span><span>Basic JS</span><span>Debugging</span><span>Communication</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide final" id="slide-15" data-title="Thank You">
+      <div class="slide-shell two-col final-col">
+        <div class="copy reveal">
+          <p class="terminal-label"><span></span> signing off</p>
           <h2>Thank You</h2>
-          <p>My internship at Systems Limited helped me build a stronger foundation in front-end development, professional communication and practical problem solving.</p>
-          <p class="large-text">I am ready for your questions.</p>
+          <p class="big-copy">My internship at Systems Limited helped me strengthen my front-end foundation, improve practical problem solving and understand professional workplace discipline.</p>
+          <div class="final-actions">
+            <a class="primary" href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download>Download PPT</a>
+            <a class="ghost" href="https://www.mahmadcs.me" target="_blank" rel="noreferrer">Back to Portfolio</a>
+          </div>
+          <p class="question">I am ready for your questions.</p>
         </div>
-        <video class="signoff-video reveal delay-1" src="assets/signing-off.mp4" poster="assets/signing-off-poster.jpg" controls playsinline></video>
+        <video class="signoff-video reveal delay-1" src="assets/signing-off.mp4" poster="assets/signing-off-poster.jpg" controls playsinline preload="metadata"></video>
       </div>
     </section>
   </main>
 
-  <aside class="slide-controls glass" aria-label="Slide controls">
+  <footer class="controls" aria-label="Presentation controls">
     <button id="prevBtn" type="button" aria-label="Previous slide">‹</button>
-    <div class="counter"><span id="currentSlide">01</span><small>/ 17</small></div>
+    <div class="progress-wrap"><span id="currentSlide">01</span><div class="progress"><b id="progressBar"></b></div><small id="totalSlides">/ 15</small></div>
     <button id="nextBtn" type="button" aria-label="Next slide">›</button>
-  </aside>
-
-  <button class="notes-toggle" id="notesToggle" type="button">Notes for me</button>
-  <section id="notesPanel" class="notes-panel glass" aria-live="polite">
-    <strong>Notes for me</strong>
-    <p id="notesText">Introduce yourself, internship organization, duration and front-end focus.</p>
-  </section>
-
-  <script src="app.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional responsive 3D animated internship viva web presentation for Muhammad Ahmad at Systems Limited." />
-  <title>Muhammad Ahmad | Internship Viva Presentation</title>
-  <link rel="preload" href="assets/systems_" as="image" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-
-  <header class="topbar glass">
-    <a class="brand" href="#slide-1" aria-label="Go to title slide">
-      <img src="assets/systems_logo.png" alt="Systems Limited logo" />
-      <span>Internship Viva</span>
-    </a>
-    <nav class="top-actions" aria-label="Presentation actions">
-      <a class="social mini-linkedin" href="https://www.linkedin.com/in/muhammad-ahmad-bscs" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a class="social mini-github" href="https://github.com/duhitsahmad" target="_blank" rel="noreferrer">GitHub</a>
-      <a class="download-btn" href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download>Download PPT</a>
-    <button id="overviewBtn" type="button" aria-label="Toggle overview">Overview</button>
-      <button id="fullscreenBtn" type="button" aria-label="Fullscreen">Full Screen</button>
-    </nav>
-  </header>
-
-  <main id="deck" class="deck" aria-label="Muhammad Ahmad internship presentation">
-    <section class="slide hero" id="slide-1" data-title="Title" data-notes="Introduce yourself, internship organization, duration and front-end focus.">
-      <div class="hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Final Internship Viva Presentation</p>
-          <h1>Front-End Development Internship</h1>
-          <p class="lead">Systems Limited · KSA Digital Consulting</p>
-          <div class="student-card glass tilt-card">
-            <div><span>Presented by</span><strong>Muhammad Ahmad</strong></div>
-            <div><span>Registration No.</span><strong>2023-BS-CS-295</strong></div>
-            <div><span>Program</span><strong>BS Computer Science</strong></div>
-          </div>
-          <div class="hero-actions">
-            <a href="#slide-2" class="primary-action">Start Presentation</a>
-            <a href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download class="secondary-action">Download PPT Version</a>
-          </div>
-        </div>
-        <div class="hero-visual reveal delay-1">
-          <div class="device-3d laptop-frame floaty">
-            <div><img src="assets/systems_building_night.jpg" alt="Systems Limited office workspace" /></div>
-            <div class="floating-badge html-badge">HTML</div>
-            <div class="floating-badge css-badge">CSS</div>
-            <div class="floating-badge js-badge">JS</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-2" data-title="About Systems Limited" data-notes="Briefly describe the company in 5 to 6 lines.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Host Organization</p>
-          <h2>About Systems Limited</h2>
-          <p class="large-text">Systems Limited is a leading Pakistani global technology company with a long history in digital transformation and enterprise technology services.</p>
-          <ul class="clean-list">
-            <li>Founded in 1977 and recognized as one of Pakistan’s pioneering IT companies.</li>
-            <li>Provides digital strategy, business applications, cloud, data & analytics, AI, digital commerce and business process services.</li>
-            <li>Serves clients across international markets through onsite and offshore delivery models.</li>
-            <li>Works with industry verticals such as banking, retail, public sector, communications and health.</li>
-            <li>The internship was connected with the KSA Digital Consulting team, giving exposure to professional methods and tools.</li>
-          </ul>
-        </div>
-        <div class="stacked-photos reveal delay-1">
-          <img src="assets/systems_building_night.jpg" alt="Systems Limited building at night" />
-          <img src="assets/systems_flag_building.jpg" alt="Systems Limited building decorated for Pakistan" />
-          <div class="metric-card glass"><strong>Digital Consulting</strong><span>Professional workflow, tools and teamwork</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-3" data-title="Internship Snapshot" data-notes="Explain the duration, supervisor and exact front-end scope.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Internship Snapshot</p>
-        <h2>Profile, Duration & Scope</h2>
-      </div>
-      <div class="snapshot-grid reveal delay-1">
-        <article class="info-tile tilt-card"><span>Student</span><strong>Muhammad Ahmad</strong><small>BS Computer Science</small></article>
-        <article class="info-tile tilt-card"><span>Registration</span><strong>2023-BS-CS-295</strong><small>The University of Faisalabad</small></article>
-        <article class="info-tile tilt-card"><span>Duration</span><strong>21 Jul – 13 Aug 2025</strong><small>Systems Limited</small></article>
-        <article class="info-tile tilt-card"><span>Focus</span><strong>Front-End Development</strong><small>Mostly HTML & CSS, basic JavaScript</small></article>
-      </div>
-      <div class="document-preview reveal delay-2">
-        <img src="assets/front_page.jpg" alt="Internship report title page" />
-        <img src="assets/offer_letter.jpg" alt="Systems Limited internship offer letter" />
-        <img src="assets/completion_certificate.jpg" alt="Systems Limited internship completion certificate" />
-      </div>
-    </section>
-
-    <section class="slide media-focus" id="slide-4" data-title="Workplace Environment" data-notes="Show the real office environment and learning setup.">
-      <div class="copy-block reveal">
-        <p class="eyebrow">Workplace Environment</p>
-        <h2>Learning in a Professional Office</h2>
-        <p>The internship environment supported focused technical practice, professional discipline, and regular exposure to office communication. My work mainly involved learning front-end structure, styling and responsive design through guided tasks and self-practice.</p>
-      </div>
-      <div class="media-grid reveal delay-1">
-        <figure class="polaroid big"><img src="assets/office_boardroom.jpg" alt="Systems office boardroom" /><figcaption>Professional office setting</figcaption></figure>
-        <figure class="polaroid"><img src="assets/systems_html_learning.jpg" alt="HTML learning setup at Systems" /><figcaption>HTML practice</figcaption></figure>
-        <figure class="polaroid"><img src="assets/workstation_communication.jpg" alt="Laptop workstation communication" /><figcaption>Team communication</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-5" data-title="Technology Stack" data-notes="Explain that scope was mostly HTML and CSS, then basic JavaScript.">
-      <div class="split-layout reverse">
-        <div class="code-cube reveal">
-          <div class="cube-scene" aria-hidden="true">
-            <div class="cube">
-              <div class="face face-front">HTML</div>
-              <div class="face face-back">CSS</div>
-              <div class="face face-right">JS</div>
-              <div class="face face-left">UX</div>
-              <div class="face face-top">WEB</div>
-              <div class="face face-bottom">UI</div>
-            </div>
-          </div>
-        </div>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Technical Scope</p>
-          <h2>Front-End Skills Practiced</h2>
-          <div class="skill-bars">
-            <div><span>HTML structure</span><b style="--w:92%"></b></div>
-            <div><span>CSS layout & design</span><b style="--w:88%"></b></div>
-            <div><span>Responsive design</span><b style="--w:76%"></b></div>
-            <div><span>Basic JavaScript</span><b style="--w:42%"></b></div>
-          </div>
-          <p class="note">No backend, database or advanced framework work was included. The goal was to strengthen the front-end foundation first.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-6" data-title="Workflow" data-notes="Explain your practical workflow from requirement to testing.">
-      <div class="title-row reveal">
-        <p class="eyebrow">My Front-End Workflow</p>
-        <h2>From Requirement to Responsive Page</h2>
-      </div>
-      <div class="timeline-3d reveal delay-1">
-        <article><span>01</span><strong>Understand</strong><p>Read requirement and identify page sections.</p></article>
-        <article><span>02</span><strong>Structure</strong><p>Create semantic HTML and organize content.</p></article>
-        <article><span>03</span><strong>Style</strong><p>Apply CSS spacing, colors, layout and consistency.</p></article>
-        <article><span>04</span><strong>Adapt</strong><p>Make the layout responsive for mobile and laptop screens.</p></article>
-        <article><span>05</span><strong>Test</strong><p>Review output, debug issues and refine final presentation.</p></article>
-      </div>
-      
-    </section>
-
-    <section class="slide" id="slide-7" data-title="HTML" data-notes="Explain HTML learning with examples.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Core Learning 01</p>
-          <h2>HTML: Building the Structure</h2>
-          <ul class="clean-list large-list">
-            <li>Created complete page skeletons using head, body, header, section and footer.</li>
-            <li>Practiced headings, paragraphs, links, images, lists, tables and forms.</li>
-            <li>Learned clean file paths for CSS, JavaScript and images.</li>
-            <li>Improved semantic structure so pages were easier to style and maintain.</li>
-          </ul>
-        </div>
-        <div class="browser-card reveal delay-1 tilt-card">
-          <div class="browser-dots"><span></span><span></span><span></span></div>
-          <pre><code>&lt;header&gt;
-  &lt;nav&gt;Home · About · Contact&lt;/nav&gt;
-&lt;/header&gt;
-&lt;main&gt;
-  &lt;section class="hero"&gt;
-    &lt;h1&gt;Front-End Project&lt;/h1&gt;
-  &lt;/section&gt;
-&lt;/main&gt;</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-8" data-title="CSS Responsive" data-notes="Describe CSS, layouts and responsive design.">
-      <div class="split-layout reverse">
-        <div class="photo-device reveal"><img src="assets/responsive_devices.jpg" alt="Responsive website devices" /></div>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Core Learning 02</p>
-          <h2>CSS: Design, Layout & Responsiveness</h2>
-          <ul class="clean-list large-list">
-            <li>Used selectors, colors, fonts, spacing, borders and backgrounds.</li>
-            <li>Practiced box model, margin, padding and element sizing.</li>
-            <li>Used Flexbox and Grid for layout alignment and structure.</li>
-            <li>Applied media queries to make pages mobile-friendly.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-9" data-title="JavaScript" data-notes="Describe JavaScript only as basic-level interaction.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Core Learning 03</p>
-        <h2>Basic JavaScript Interaction</h2>
-      </div>
-      <div class="js-grid reveal delay-1">
-        <article class="tilt-card"><span>DOM Selection</span><strong>querySelector()</strong><p>Connected JavaScript with HTML elements.</p></article>
-        <article class="tilt-card"><span>Events</span><strong>click / input</strong><p>Triggered simple actions from user interaction.</p></article>
-        <article class="tilt-card"><span>Logic</span><strong>if / else</strong><p>Handled simple decisions and form checks.</p></article>
-        <article class="tilt-card"><span>Functions</span><strong>Reusable code</strong><p>Organized small tasks into clear functions.</p></article>
-      </div>
-      <p class="center-note reveal delay-2">JavaScript was intentionally kept at basic level because the main internship focus was HTML and CSS.</p>
-    </section>
-
-    <section class="slide" id="slide-10" data-title="Project Work" data-notes="Discuss GitHub Profile Viewer and front-end mini project practice.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Practice Project</p>
-          <h2>Mini Front-End Project Work</h2>
-          <p>I practiced creating a small front-end interface using HTML, CSS and JavaScript. The screen shown here represents project-style learning, where structure, styling and small JavaScript behavior were combined in one working page.</p>
-          <div class="highlight-box">Example: GitHub Profile Viewer style interface with input field, profile button and dynamic profile details.</div>
-        </div>
-        <figure class="project-photo reveal delay-1 tilt-card"><img src="assets/vscode_project.jpg" alt="VS Code front-end project work" /><figcaption>VS Code project practice at Systems Limited</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-11" data-title="Systems Exposure" data-notes="Show exposure to workplace systems and digital attendance.">
-      <div class="split-layout reverse">
-        <figure class="project-photo reveal"><img src="assets/attendance.jpg" alt="SYSAMS attendance interface" /><figcaption>SYSAMS digital attendance interface</figcaption></figure>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Digital Workplace Exposure</p>
-          <h2>Understanding Internal Systems</h2>
-          <p>The internship also gave exposure to how a professional technology company uses internal systems, attendance tools and digital communication. This helped me understand how software supports real organizational processes.</p>
-          <ul class="clean-list">
-            <li>Observed structured check-in and check-out workflows.</li>
-            <li>Understood the role of digital tools in office discipline.</li>
-            <li>Connected front-end interface design with real user needs.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-12" data-title="Culture" data-notes="Discuss workplace culture and communication.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Professional Culture</p>
-        <h2>Communication, Events & Team Environment</h2>
-      </div>
-      <div class="culture-grid reveal delay-1">
-        <figure><img src="assets/independence_event.jpg" alt="Pakistan Independence Day event email" /><figcaption>Internal communication & events</figcaption></figure>
-        <figure><img src="assets/open_office.jpg" alt="Open office at Systems Limited" /><figcaption>Professional open office environment</figcaption></figure>
-      </div>
-      <p class="center-note reveal delay-2">The office environment showed how technical learning, professional communication and organizational culture work together.</p>
-    </section>
-
-    <section class="slide" id="slide-13" data-title="Challenges" data-notes="Explain problems faced and solutions.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Challenges & Solutions</p>
-          <h2>What I Improved During Internship</h2>
-          <div class="challenge-list">
-            <article><strong>Responsive Issues</strong><span>Solved through media queries and flexible layouts.</span></article>
-            <article><strong>CSS Alignment</strong><span>Improved spacing using box model, Flexbox and Grid.</span></article>
-            <article><strong>Broken Links/Paths</strong><span>Checked file names, folders and stylesheet linking.</span></article>
-            <article><strong>JavaScript Basics</strong><span>Practiced DOM selection, events and small functions.</span></article>
-          </div>
-        </div>
-        <div class="photo-device reveal delay-1"><img src="assets/debugging_workspace.jpg" alt="Debugging workspace illustration" /></div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-14" data-title="Learning Outcomes" data-notes="Summarize key learning outcomes.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Learning Outcomes</p>
-        <h2>Skills Gained from the Internship</h2>
-      </div>
-      <div class="outcome-orbit reveal delay-1">
-        <div class="center-orb">Front-End<br/>Foundation</div>
-        <article>Semantic HTML</article>
-        <article>CSS Layout</article>
-        <article>Responsive Design</article>
-        <article>Basic JavaScript</article>
-        <article>Debugging</article>
-        <article>Communication</article>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-15" data-title="Professional Links" data-notes="Open LinkedIn and GitHub profiles from the presentation.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Professional Presence</p>
-        <h2 style="color:steelblue;">LinkedIn</h2> <h2>& GitHub</h2>
-      </div>
-      <div class="profile-grid reveal delay-1">
-        <article class="linkedin-panel tilt-card">
-          <div class="mock-toolbar"><span></span><span></span><span></span><em>linkedin.com/in/muhammad-ahmad-bscs</em></div>
-          <div class="li-head"></div>
-          <div class="li-profile">
-            <div class="avatar">MA</div>
-            <div><h3>Muhammad Ahmad</h3><p>BS Computer Science · Front-End Intern</p><small>Systems Limited | HTML · CSS · JavaScript</small></div>
-          </div>
-          <a href="https://www.linkedin.com/in/muhammad-ahmad-bscs" target="_blank" rel="noreferrer" class="profile-btn">Open LinkedIn Profile</a>
-        </article>
-        <article class="github-panel tilt-card">
-          <div class="mock-toolbar"><span></span><span></span><span></span><em>github.com/duhitsahmad</em></div>
-          <h3>GitHub</h3>
-          <p>Project practice: responsive pages, JavaScript exercises and GitHub Profile Viewer style UI.</p>
-          <div class="repo-lines"><i></i><i></i><i></i></div>
-          <a href="https://github.com/duhitsahmad" target="_blank" rel="noreferrer" class="profile-btn dark">Open GitHub Account</a>
-        </article>
-      </div>
-      <p class="center-note reveal delay-2">LinkedIn and GitHub open directly in a new tab from this slide.</p>
-    </section>
-
-    <section class="slide" id="slide-16" data-title="Download" data-notes="Show the downloadable PPT version and source documents.">
-      <div class="download-stage reveal">
-        <div class="download-card tilt-card">
-          <p class="eyebrow">Download Feature</p>
-          <h2>Presentation Backup Available</h2>
-          <p>This web presentation includes a PPT version that can be downloaded and submitted or used offline during viva if required.</p>
-          <a href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download class="big-download">Download Same PPT Version</a>
-        </div>
-        <div class="doc-fan" aria-label="Document previews">
-          <img src="assets/offer_letter.jpg" alt="Offer letter" />
-          <img src="assets/completion_certificate.jpg" alt="Completion certificate" />
-          <img src="assets/front_page.jpg" alt="Report front page" />
-        </div>
-      </div>
-    </section>
-
-    <section class="slide final-slide" id="slide-17" data-title="Signing Off" data-notes="End confidently, thank committee and invite questions.">
-      <h1 style="color:rgb(131, 24, 130);">Signing Off</h1>
-      <div class="final-layout">
-        <div class="copy-block reveal">
-          
-          <h2>Thank You</h2>
-          <p>My internship at Systems Limited helped me build a stronger foundation in front-end development, professional communication and practical problem solving.</p>
-          <p class="large-text">I am ready for your questions.</p>
-        </div>
-        <video class="signoff-video reveal delay-1" src="assets/signing-off.mp4" poster="assets/signing-off-poster.jpg" controls playsinline></video>
-      </div>
-    </section>
-  </main>
-
-  <aside class="slide-controls glass" aria-label="Slide controls">
-    <button id="prevBtn" type="button" aria-label="Previous slide">‹</button>
-    <div class="counter"><span id="currentSlide">01</span><small>/ 17</small></div>
-    <button id="nextBtn" type="button" aria-label="Next slide">›</button>
-  </aside>
-
-  <button class="notes-toggle" id="notesToggle" type="button">Notes for me</button>
-  <section id="notesPanel" class="notes-panel glass" aria-live="polite">
-    <strong>Notes for me</strong>
-    <p id="notesText">Introduce yourself, internship organization, duration and front-end focus.</p>
-  </section>
-
-  <script src="app.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional responsive 3D animated internship viva web presentation for Muhammad Ahmad at Systems Limited." />
-  <title>Muhammad Ahmad | Internship Viva Presentation</title>
-  <link rel="preload" href="assets/systems_" as="image" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-
-  <header class="topbar glass">
-    <a class="brand" href="#slide-1" aria-label="Go to title slide">
-      <img src="assets/systems_logo.png" alt="Systems Limited logo" />
-      <span>Internship Viva</span>
-    </a>
-    <nav class="top-actions" aria-label="Presentation actions">
-      <a class="social mini-linkedin" href="https://www.linkedin.com/in/muhammad-ahmad-bscs" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a class="social mini-github" href="https://github.com/duhitsahmad" target="_blank" rel="noreferrer">GitHub</a>
-      <a class="download-btn" href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download>Download PPT</a>
-    <button id="overviewBtn" type="button" aria-label="Toggle overview">Overview</button>
-      <button id="fullscreenBtn" type="button" aria-label="Fullscreen">Full Screen</button>
-    </nav>
-  </header>
-
-  <main id="deck" class="deck" aria-label="Muhammad Ahmad internship presentation">
-    <section class="slide hero" id="slide-1" data-title="Title" data-notes="Introduce yourself, internship organization, duration and front-end focus.">
-      <div class="hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Final Internship Viva Presentation</p>
-          <h1>Front-End Development Internship</h1>
-          <p class="lead">Systems Limited · KSA Digital Consulting</p>
-          <div class="student-card glass tilt-card">
-            <div><span>Presented by</span><strong>Muhammad Ahmad</strong></div>
-            <div><span>Registration No.</span><strong>2023-BS-CS-295</strong></div>
-            <div><span>Program</span><strong>BS Computer Science</strong></div>
-          </div>
-          <div class="hero-actions">
-            <a href="#slide-2" class="primary-action">Start Presentation</a>
-            <a href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download class="secondary-action">Download PPT Version</a>
-          </div>
-        </div>
-        <div class="hero-visual reveal delay-1">
-          <div class="device-3d laptop-frame floaty">
-            <div><img src="assets/systems_building_night.jpg" alt="Systems Limited office workspace" /></div>
-            <div class="floating-badge html-badge">HTML</div>
-            <div class="floating-badge css-badge">CSS</div>
-            <div class="floating-badge js-badge">JS</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-2" data-title="About Systems Limited" data-notes="Briefly describe the company in 5 to 6 lines.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Host Organization</p>
-          <h2>About Systems Limited</h2>
-          <p class="large-text">Systems Limited is a leading Pakistani global technology company with a long history in digital transformation and enterprise technology services.</p>
-          <ul class="clean-list">
-            <li>Founded in 1977 and recognized as one of Pakistan’s pioneering IT companies.</li>
-            <li>Provides digital strategy, business applications, cloud, data & analytics, AI, digital commerce and business process services.</li>
-            <li>Serves clients across international markets through onsite and offshore delivery models.</li>
-            <li>Works with industry verticals such as banking, retail, public sector, communications and health.</li>
-            <li>The internship was connected with the KSA Digital Consulting team, giving exposure to professional methods and tools.</li>
-          </ul>
-        </div>
-        <div class="stacked-photos reveal delay-1">
-          <img src="assets/systems_building_night.jpg" alt="Systems Limited building at night" />
-          <img src="assets/systems_flag_building.jpg" alt="Systems Limited building decorated for Pakistan" />
-          <div class="metric-card glass"><strong>Digital Consulting</strong><span>Professional workflow, tools and teamwork</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-3" data-title="Internship Snapshot" data-notes="Explain the duration, supervisor and exact front-end scope.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Internship Snapshot</p>
-        <h2>Profile, Duration & Scope</h2>
-      </div>
-      <div class="snapshot-grid reveal delay-1">
-        <article class="info-tile tilt-card"><span>Student</span><strong>Muhammad Ahmad</strong><small>BS Computer Science</small></article>
-        <article class="info-tile tilt-card"><span>Registration</span><strong>2023-BS-CS-295</strong><small>The University of Faisalabad</small></article>
-        <article class="info-tile tilt-card"><span>Duration</span><strong>21 Jul – 13 Aug 2025</strong><small>Systems Limited</small></article>
-        <article class="info-tile tilt-card"><span>Focus</span><strong>Front-End Development</strong><small>Mostly HTML & CSS, basic JavaScript</small></article>
-      </div>
-      <div class="document-preview reveal delay-2">
-        <img src="assets/front_page.jpg" alt="Internship report title page" />
-        <img src="assets/offer_letter.jpg" alt="Systems Limited internship offer letter" />
-        <img src="assets/completion_certificate.jpg" alt="Systems Limited internship completion certificate" />
-      </div>
-    </section>
-
-    <section class="slide media-focus" id="slide-4" data-title="Workplace Environment" data-notes="Show the real office environment and learning setup.">
-      <div class="copy-block reveal">
-        <p class="eyebrow">Workplace Environment</p>
-        <h2>Learning in a Professional Office</h2>
-        <p>The internship environment supported focused technical practice, professional discipline, and regular exposure to office communication. My work mainly involved learning front-end structure, styling and responsive design through guided tasks and self-practice.</p>
-      </div>
-      <div class="media-grid reveal delay-1">
-        <figure class="polaroid big"><img src="assets/office_boardroom.jpg" alt="Systems office boardroom" /><figcaption>Professional office setting</figcaption></figure>
-        <figure class="polaroid"><img src="assets/systems_html_learning.jpg" alt="HTML learning setup at Systems" /><figcaption>HTML practice</figcaption></figure>
-        <figure class="polaroid"><img src="assets/workstation_communication.jpg" alt="Laptop workstation communication" /><figcaption>Team communication</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-5" data-title="Technology Stack" data-notes="Explain that scope was mostly HTML and CSS, then basic JavaScript.">
-      <div class="split-layout reverse">
-        <div class="code-cube reveal">
-          <div class="cube-scene" aria-hidden="true">
-            <div class="cube">
-              <div class="face face-front">HTML</div>
-              <div class="face face-back">CSS</div>
-              <div class="face face-right">JS</div>
-              <div class="face face-left">UX</div>
-              <div class="face face-top">WEB</div>
-              <div class="face face-bottom">UI</div>
-            </div>
-          </div>
-        </div>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Technical Scope</p>
-          <h2>Front-End Skills Practiced</h2>
-          <div class="skill-bars">
-            <div><span>HTML structure</span><b style="--w:92%"></b></div>
-            <div><span>CSS layout & design</span><b style="--w:88%"></b></div>
-            <div><span>Responsive design</span><b style="--w:76%"></b></div>
-            <div><span>Basic JavaScript</span><b style="--w:42%"></b></div>
-          </div>
-          <p class="note">No backend, database or advanced framework work was included. The goal was to strengthen the front-end foundation first.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-6" data-title="Workflow" data-notes="Explain your practical workflow from requirement to testing.">
-      <div class="title-row reveal">
-        <p class="eyebrow">My Front-End Workflow</p>
-        <h2>From Requirement to Responsive Page</h2>
-      </div>
-      <div class="timeline-3d reveal delay-1">
-        <article><span>01</span><strong>Understand</strong><p>Read requirement and identify page sections.</p></article>
-        <article><span>02</span><strong>Structure</strong><p>Create semantic HTML and organize content.</p></article>
-        <article><span>03</span><strong>Style</strong><p>Apply CSS spacing, colors, layout and consistency.</p></article>
-        <article><span>04</span><strong>Adapt</strong><p>Make the layout responsive for mobile and laptop screens.</p></article>
-        <article><span>05</span><strong>Test</strong><p>Review output, debug issues and refine final presentation.</p></article>
-      </div>
-      
-    </section>
-
-    <section class="slide" id="slide-7" data-title="HTML" data-notes="Explain HTML learning with examples.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Core Learning 01</p>
-          <h2>HTML: Building the Structure</h2>
-          <ul class="clean-list large-list">
-            <li>Created complete page skeletons using head, body, header, section and footer.</li>
-            <li>Practiced headings, paragraphs, links, images, lists, tables and forms.</li>
-            <li>Learned clean file paths for CSS, JavaScript and images.</li>
-            <li>Improved semantic structure so pages were easier to style and maintain.</li>
-          </ul>
-        </div>
-        <div class="browser-card reveal delay-1 tilt-card">
-          <div class="browser-dots"><span></span><span></span><span></span></div>
-          <pre><code>&lt;header&gt;
-  &lt;nav&gt;Home · About · Contact&lt;/nav&gt;
-&lt;/header&gt;
-&lt;main&gt;
-  &lt;section class="hero"&gt;
-    &lt;h1&gt;Front-End Project&lt;/h1&gt;
-  &lt;/section&gt;
-&lt;/main&gt;</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-8" data-title="CSS Responsive" data-notes="Describe CSS, layouts and responsive design.">
-      <div class="split-layout reverse">
-        <div class="photo-device reveal"><img src="assets/responsive_devices.jpg" alt="Responsive website devices" /></div>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Core Learning 02</p>
-          <h2>CSS: Design, Layout & Responsiveness</h2>
-          <ul class="clean-list large-list">
-            <li>Used selectors, colors, fonts, spacing, borders and backgrounds.</li>
-            <li>Practiced box model, margin, padding and element sizing.</li>
-            <li>Used Flexbox and Grid for layout alignment and structure.</li>
-            <li>Applied media queries to make pages mobile-friendly.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-9" data-title="JavaScript" data-notes="Describe JavaScript only as basic-level interaction.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Core Learning 03</p>
-        <h2>Basic JavaScript Interaction</h2>
-      </div>
-      <div class="js-grid reveal delay-1">
-        <article class="tilt-card"><span>DOM Selection</span><strong>querySelector()</strong><p>Connected JavaScript with HTML elements.</p></article>
-        <article class="tilt-card"><span>Events</span><strong>click / input</strong><p>Triggered simple actions from user interaction.</p></article>
-        <article class="tilt-card"><span>Logic</span><strong>if / else</strong><p>Handled simple decisions and form checks.</p></article>
-        <article class="tilt-card"><span>Functions</span><strong>Reusable code</strong><p>Organized small tasks into clear functions.</p></article>
-      </div>
-      <p class="center-note reveal delay-2">JavaScript was intentionally kept at basic level because the main internship focus was HTML and CSS.</p>
-    </section>
-
-    <section class="slide" id="slide-10" data-title="Project Work" data-notes="Discuss GitHub Profile Viewer and front-end mini project practice.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Practice Project</p>
-          <h2>Mini Front-End Project Work</h2>
-          <p>I practiced creating a small front-end interface using HTML, CSS and JavaScript. The screen shown here represents project-style learning, where structure, styling and small JavaScript behavior were combined in one working page.</p>
-          <div class="highlight-box">Example: GitHub Profile Viewer style interface with input field, profile button and dynamic profile details.</div>
-        </div>
-        <figure class="project-photo reveal delay-1 tilt-card"><img src="assets/vscode_project.jpg" alt="VS Code front-end project work" /><figcaption>VS Code project practice at Systems Limited</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-11" data-title="Systems Exposure" data-notes="Show exposure to workplace systems and digital attendance.">
-      <div class="split-layout reverse">
-        <figure class="project-photo reveal"><img src="assets/attendance.jpg" alt="SYSAMS attendance interface" /><figcaption>SYSAMS digital attendance interface</figcaption></figure>
-        <div class="copy-block reveal delay-1">
-          <p class="eyebrow">Digital Workplace Exposure</p>
-          <h2>Understanding Internal Systems</h2>
-          <p>The internship also gave exposure to how a professional technology company uses internal systems, attendance tools and digital communication. This helped me understand how software supports real organizational processes.</p>
-          <ul class="clean-list">
-            <li>Observed structured check-in and check-out workflows.</li>
-            <li>Understood the role of digital tools in office discipline.</li>
-            <li>Connected front-end interface design with real user needs.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-12" data-title="Culture" data-notes="Discuss workplace culture and communication.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Professional Culture</p>
-        <h2>Communication, Events & Team Environment</h2>
-      </div>
-      <div class="culture-grid reveal delay-1">
-        <figure><img src="assets/independence_event.jpg" alt="Pakistan Independence Day event email" /><figcaption>Internal communication & events</figcaption></figure>
-        <figure><img src="assets/open_office.jpg" alt="Open office at Systems Limited" /><figcaption>Professional open office environment</figcaption></figure>
-      </div>
-      <p class="center-note reveal delay-2">The office environment showed how technical learning, professional communication and organizational culture work together.</p>
-    </section>
-
-    <section class="slide" id="slide-13" data-title="Challenges" data-notes="Explain problems faced and solutions.">
-      <div class="split-layout">
-        <div class="copy-block reveal">
-          <p class="eyebrow">Challenges & Solutions</p>
-          <h2>What I Improved During Internship</h2>
-          <div class="challenge-list">
-            <article><strong>Responsive Issues</strong><span>Solved through media queries and flexible layouts.</span></article>
-            <article><strong>CSS Alignment</strong><span>Improved spacing using box model, Flexbox and Grid.</span></article>
-            <article><strong>Broken Links/Paths</strong><span>Checked file names, folders and stylesheet linking.</span></article>
-            <article><strong>JavaScript Basics</strong><span>Practiced DOM selection, events and small functions.</span></article>
-          </div>
-        </div>
-        <div class="photo-device reveal delay-1"><img src="assets/debugging_workspace.jpg" alt="Debugging workspace illustration" /></div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-14" data-title="Learning Outcomes" data-notes="Summarize key learning outcomes.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Learning Outcomes</p>
-        <h2>Skills Gained from the Internship</h2>
-      </div>
-      <div class="outcome-orbit reveal delay-1">
-        <div class="center-orb">Front-End<br/>Foundation</div>
-        <article>Semantic HTML</article>
-        <article>CSS Layout</article>
-        <article>Responsive Design</article>
-        <article>Basic JavaScript</article>
-        <article>Debugging</article>
-        <article>Communication</article>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-15" data-title="Professional Links" data-notes="Open LinkedIn and GitHub profiles from the presentation.">
-      <div class="title-row reveal">
-        <p class="eyebrow">Professional Presence</p>
-        <h2 style="color:steelblue;">LinkedIn</h2> <h2>& GitHub</h2>
-      </div>
-      <div class="profile-grid reveal delay-1">
-        <article class="linkedin-panel tilt-card">
-          <div class="mock-toolbar"><span></span><span></span><span></span><em>linkedin.com/in/muhammad-ahmad-bscs</em></div>
-          <div class="li-head"></div>
-          <div class="li-profile">
-            <div class="avatar">MA</div>
-            <div><h3>Muhammad Ahmad</h3><p>BS Computer Science · Front-End Intern</p><small>Systems Limited | HTML · CSS · JavaScript</small></div>
-          </div>
-          <a href="https://www.linkedin.com/in/muhammad-ahmad-bscs" target="_blank" rel="noreferrer" class="profile-btn">Open LinkedIn Profile</a>
-        </article>
-        <article class="github-panel tilt-card">
-          <div class="mock-toolbar"><span></span><span></span><span></span><em>github.com/duhitsahmad</em></div>
-          <h3>GitHub</h3>
-          <p>Project practice: responsive pages, JavaScript exercises and GitHub Profile Viewer style UI.</p>
-          <div class="repo-lines"><i></i><i></i><i></i></div>
-          <a href="https://github.com/duhitsahmad" target="_blank" rel="noreferrer" class="profile-btn dark">Open GitHub Account</a>
-        </article>
-      </div>
-      <p class="center-note reveal delay-2">LinkedIn and GitHub open directly in a new tab from this slide.</p>
-    </section>
-
-    <section class="slide" id="slide-16" data-title="Download" data-notes="Show the downloadable PPT version and source documents.">
-      <div class="download-stage reveal">
-        <div class="download-card tilt-card">
-          <p class="eyebrow">Download Feature</p>
-          <h2>Presentation Backup Available</h2>
-          <p>This web presentation includes a PPT version that can be downloaded and submitted or used offline during viva if required.</p>
-          <a href="assets/Muhammad_Ahmad_Internship_Viva_Presentation.pptx" download class="big-download">Download Same PPT Version</a>
-        </div>
-        <div class="doc-fan" aria-label="Document previews">
-          <img src="assets/offer_letter.jpg" alt="Offer letter" />
-          <img src="assets/completion_certificate.jpg" alt="Completion certificate" />
-          <img src="assets/front_page.jpg" alt="Report front page" />
-        </div>
-      </div>
-    </section>
-
-    <section class="slide final-slide" id="slide-17" data-title="Signing Off" data-notes="End confidently, thank committee and invite questions.">
-      <h1 style="color:rgb(131, 24, 130);">Signing Off</h1>
-      <div class="final-layout">
-        <div class="copy-block reveal">
-          
-          <h2>Thank You</h2>
-          <p>My internship at Systems Limited helped me build a stronger foundation in front-end development, professional communication and practical problem solving.</p>
-          <p class="large-text">I am ready for your questions.</p>
-        </div>
-        <video class="signoff-video reveal delay-1" src="assets/signing-off.mp4" poster="assets/signing-off-poster.jpg" controls playsinline></video>
-      </div>
-    </section>
-  </main>
-
-  <aside class="slide-controls glass" aria-label="Slide controls">
-    <button id="prevBtn" type="button" aria-label="Previous slide">‹</button>
-    <div class="counter"><span id="currentSlide">01</span><small>/ 17</small></div>
-    <button id="nextBtn" type="button" aria-label="Next slide">›</button>
-  </aside>
-
-  <button class="notes-toggle" id="notesToggle" type="button">Notes for me</button>
-  <section id="notesPanel" class="notes-panel glass" aria-live="polite">
-    <strong>Notes for me</strong>
-    <p id="notesText">Introduce yourself, internship organization, duration and front-end focus.</p>
-  </section>
+  </footer>
 
   <script src="app.js"></script>
 </body>
